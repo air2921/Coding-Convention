@@ -52,6 +52,14 @@
 - Свойства должны иметь явно указанный модификатор доступа.
 - Свойства должны именоваться в стиле `PascalCase`.
 - Приватные поля для хранения значений должны именоваться именем свойства в стиле `pascalCase`, с обязательным префиксом `_`.
+- У коллекций должно быть указано значение по умолчанию
+    - Избегайте создания массива нулевого размера.
+    - `public IEnumerable<string> Names { get; set; } = [];`
+    - `public IEnumerable<string> Names { get; set; } = Enumerable.Empty<string>();`
+- У ссылочных типов обязательно должно быть указано значение по умолчанию
+    - `public string Name { get; set; } = null!;`
+    - `public required string Name { get; set; }`
+    - `public string? Name { get; set; }`
 
 ## Объекты передачи данных (Data transfer objects)
 - DTO должны иметь явно указанный модификатор доступа.
